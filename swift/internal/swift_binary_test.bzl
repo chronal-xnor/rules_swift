@@ -53,6 +53,7 @@ def _configure_features_for_binary(ctx, requested_features = [], unsupported_fea
         unsupported_features.append("gcc_coverage_map_format")
 
     return swift_common.configure_features(
+        ctx = ctx,
         requested_features = requested_features,
         swift_toolchain = toolchain,
         unsupported_features = unsupported_features,

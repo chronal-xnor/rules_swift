@@ -55,6 +55,7 @@ following dependencies instead:\n\n""".format(
 
     toolchain = ctx.attr._toolchain[SwiftToolchainInfo]
     feature_configuration = swift_common.configure_features(
+        ctx = ctx,
         requested_features = ctx.features,
         swift_toolchain = toolchain,
         unsupported_features = ctx.disabled_features,

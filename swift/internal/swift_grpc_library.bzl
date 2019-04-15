@@ -186,6 +186,7 @@ def _swift_grpc_library_impl(ctx):
         unsupported_features.append(SWIFT_FEATURE_ENABLE_TESTING)
 
     feature_configuration = swift_common.configure_features(
+        ctx = ctx,
         requested_features = ctx.features + [SWIFT_FEATURE_NO_GENERATED_HEADER],
         swift_toolchain = toolchain,
         unsupported_features = unsupported_features,

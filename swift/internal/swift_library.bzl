@@ -35,6 +35,7 @@ def _swift_library_impl(ctx):
     toolchain = ctx.attr._toolchain[SwiftToolchainInfo]
 
     feature_configuration = swift_common.configure_features(
+        ctx = ctx,
         requested_features = ctx.features,
         swift_toolchain = toolchain,
         unsupported_features = ctx.disabled_features,
@@ -93,4 +94,5 @@ Compiles and links Swift code into a static library and Swift module.
 """,
     outputs = swift_library_output_map,
     implementation = _swift_library_impl,
+    fragments = ["cpp"],
 )
